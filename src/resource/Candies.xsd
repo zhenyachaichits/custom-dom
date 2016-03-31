@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.epam.com/candies"
+xmlns:tns="http://www.epam.com/candies">
+<element name="candies">
+  <complexType>
+    <sequence>
+      <element name="candy" type="tns:Candy" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+</element>
+
+  <complexType name="Candy">
+    <all>
+      <element name="name" type="string"/>
+      <element name="energy" type="float"/>
+      <element name="type" type="string"/>
+      <element name="ingredients" type="tns:Ingredients"/>
+      <element name="value" type="tns:Value"/>
+      <element name="production" type="string"/>
+    </all>
+    <attribute name="id" type="int"/>
+  </complexType>
+
+  <complexType name="Ingredients">
+    <all>
+      <element name="sugar" type="float"/>
+      <element name="water" type="float"/>
+      <element name="fructose" type="float"/>
+      <element name="chocolate" type="float"/>
+    </all>
+  </complexType>
+
+  <complexType name="Value">
+    <all>
+      <element name="protein" type="float"/>
+      <element name="fat" type="float"/>
+      <element name="carbohydrate" type="float"/>
+    </all>
+  </complexType>
+
+</schema>
